@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import SongArtist from "./SongArtist";
 import SongLyric from "./SongLyric";
 import Message from "./Message";
