@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-// Los datos que traiga este hook personalizado los podremos guardar en una variable de estoad, por eso hacemos uso de un custom hook y no del un helper
+// Los datos que traiga este hook personalizado los podremos guardar en una variable de estado, por eso hacemos uso de un custom hook y no del un helper
 // Hooks personalizados usados para devolver logica
 export const useFetch = (url) => {
   // Estados para guardar los datos, errores y la carga
@@ -35,9 +35,7 @@ export const useFetch = (url) => {
           setError(error);
         }
       } finally {
-        if (!signal.aborted) {
-          setLoading(false);
-        }
+        if (!signal.aborted) setLoading(false);
       }
     };
     fetchData();
