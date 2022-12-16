@@ -7,7 +7,6 @@ export const useForm = (initialForm, validateForm) => {
   const [response, setResponse] = useState(null);
 
   const handleChange = (e) => {
-    console.log(e.target);
     const { name, value } = e.target;
     setForm({
       ...form,
