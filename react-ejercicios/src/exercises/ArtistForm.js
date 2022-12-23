@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-const ArtistForm = ({ setSearch }) => {
-  const initialForm = {
-    artist1: "",
-    artist2: "",
-  };
+
+const initialForm = {
+  artist1: "",
+  artist2: "",
+};
+
+const ArtistForm = ({ searchData }) => {
   const [form, setForm] = useState(initialForm);
+
   const handleChange = (e) => {
     setForm({
       ...form,
@@ -13,7 +16,13 @@ const ArtistForm = ({ setSearch }) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSearch(form);
+    if (!form.artist1 || !form.artist2) {
+      return alert("Datos incompletos");
+    }
+    searchData(form);
+  };
+  const handleReset = (e) => {
+    setForm(initialForm);
   };
   return (
     <div>
@@ -32,7 +41,7 @@ const ArtistForm = ({ setSearch }) => {
           onChange={handleChange}
           value={form.artist2}
         ></input>
-        <input type="submit" value="Submit"></input>
+        <input type="submit" value="Enviar"></input>
       </form>
     </div>
   );

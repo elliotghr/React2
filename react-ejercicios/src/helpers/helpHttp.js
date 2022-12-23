@@ -1,5 +1,5 @@
 // Helper custom para peticiones Ajax
-// Se usa en lugar de un hook personalizado porque no haremos uso de los hokks de React
+// Se usa en lugar de un hook personalizado porque no haremos uso de los hooks de React
 // Escrito en vanilla js con posibilidad de reuso en cualquier framework
 // Exportado de manera normal para llamarlo forzosamente con este nombre
 

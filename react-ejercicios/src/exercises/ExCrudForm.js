@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 
-const initialForm = {
-  id: null,
-  name: "",
-  age: "",
-};
+const ExCrudForm = ({ createData, updateData, setDataToEdit, dataToEdit }) => {
+  const initialForm = {
+    name: "",
+    age: "",
+    id: null,
+  };
 
-const ExForm = ({ createData, updateData, dataToEdit, setdataToEdit }) => {
-  const [form, setForm] = useState(initialForm);
   useEffect(() => {
     if (dataToEdit) {
       setForm(dataToEdit);
@@ -16,29 +15,31 @@ const ExForm = ({ createData, updateData, dataToEdit, setdataToEdit }) => {
     }
   }, [dataToEdit]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!form.age || !form.name) return alert("Datos incompletos");
+  const [form, setForm] = useState(initialForm);
 
-    if (form.id === null) {
-      createData(form);
-    } else {
-      updateData(form);
-    }
-    handleReset();
-  };
   const handleChange = (e) => {
     setForm({
       ...form,
       [e.target.name]: e.target.value,
     });
   };
-  const handleReset = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!form.name || !form.age) return alert("Datos incompletos");
+
+    if (!form.id) {
+      createData(form);
+    } else {
+      updateData(form);
+    }
+    handleReset();
+  };
+  const handleReset = (e) => {
     setForm(initialForm);
-    setdataToEdit(null);
   };
   return (
     <div>
+      <h3>Form</h3>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -61,4 +62,4 @@ const ExForm = ({ createData, updateData, dataToEdit, setdataToEdit }) => {
   );
 };
 
-export default ExForm;
+export default ExCrudForm;
