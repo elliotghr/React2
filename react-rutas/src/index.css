@@ -14,3 +14,13 @@ hr{
   margin: 2rem auto;
 }
 
+a{
+  margin-left: 2rem;
+}
+.active{
+  font-weight: bold;
+  color: rgb(35, 153, 221);
+}
+li{
+  margin-bottom: 1rem;
+}
