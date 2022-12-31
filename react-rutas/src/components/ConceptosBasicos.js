@@ -1,22 +1,40 @@
 // Importación de BrowserRouter, Rutas para la web
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+} from "react-router-dom";
 import Acerca from "../pages/Acerca";
 import Contacto from "../pages/Contacto";
 import Home from "../pages/Home";
 import Error404 from "../pages/Error404";
 import MenuConceptos from "./MenuConceptos";
+import Usuario from "../pages/Usuario";
+import Productos from "../pages/Productos";
 
 const ConceptosBasicos = () => {
   return (
     <div>
       <h2>ConceptosBasicos</h2>
       <Router>
-      <MenuConceptos></MenuConceptos>
+        <MenuConceptos></MenuConceptos>
         <Switch>
           <Route exact path="/" component={Home}></Route>
           <Route exact path="/acerca" component={Acerca}></Route>
           <Route exact path="/contacto" component={Contacto}></Route>
+          {/* Cuando se le anteponen : a la cadena del path react sabe que es un parametro */}
+          <Route exact path="/usuario/:username" component={Usuario}></Route>{" "}
+          {/* Usamos internamente el hook useLocation para poder obtener los parametros de consulta */}
+          <Route exact path="/productos" component={Productos}></Route>
           {/* Debe estar cargada al final */}
+          {/* Redirecciones */}
+          <Route exact path="/about">
+            <Redirect to="/acerca"></Redirect>
+          </Route>
+          <Route exact path="/contact">
+            <Redirect to="/contacto"></Redirect>
+          </Route>
           <Route path="*" component={Error404}></Route>
         </Switch>
       </Router>

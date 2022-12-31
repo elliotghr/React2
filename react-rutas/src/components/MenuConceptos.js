@@ -20,11 +20,36 @@ const MenuConceptos = () => {
         </li>
         {/* Nav link ofrece un atributo activeClassName que permite añadirle css*/}
         <li>
-          <span>Componente Link</span>
-          <NavLink exact to="/" activeClassName="active">Home</NavLink>
-          <NavLink exact to="/acerca" activeClassName="active">acerca</NavLink>
-          <NavLink exact to="/contacto" activeClassName="active">contacto</NavLink>
-          <NavLink exact to="/no-existe" activeClassName="active">Error 404</NavLink>
+          <span>Componente NavLink</span>
+          <NavLink exact to="/" activeClassName="active">
+            Home
+          </NavLink>
+          <NavLink exact to="/acerca" activeClassName="active">
+            acerca
+          </NavLink>
+          <NavLink exact to="/contacto" activeClassName="active">
+            contacto
+          </NavLink>
+          <NavLink exact to="/" activeClassName="active">
+            contacto
+          </NavLink>
+          <NavLink exact to="/no-existe" activeClassName="active">
+            Error 404
+          </NavLink>
+        </li>
+        <li>
+          <span>Parámetros:</span>
+          <Link to="/usuario/elliot">elliot</Link>
+          <Link to="/usuario/nano">nano</Link>
+        </li>
+        <li>
+          <span>Parametros de consulta:</span>
+          <Link to="/productos">Productos</Link>
+        </li>
+        <li>
+          Redirecciones :
+          <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
         </li>
       </ol>
     </nav>
