@@ -12,6 +12,10 @@ import Error404 from "../pages/Error404";
 import MenuConceptos from "./MenuConceptos";
 import Usuario from "../pages/Usuario";
 import Productos from "../pages/Productos";
+import ReactTopics from "../pages/ReactTopics";
+import Login from "../pages/Login";
+import Dashboard from "../pages/Dashboard";
+import PrivateRoute from "./PrivateRoute";
 
 const ConceptosBasicos = () => {
   return (
@@ -35,6 +39,17 @@ const ConceptosBasicos = () => {
           <Route exact path="/contact">
             <Redirect to="/contacto"></Redirect>
           </Route>
+          {/* Dentro de react tpoics vamos a generar un switch que permita la anidación */}
+          {/* Al tener un dinamismo no ocuparemos el atributo exact o generará un error */}
+          <Route path="/react" component={ReactTopics}></Route>
+          <Route exact path="/login" component={Login}></Route>
+          {/* Referencia para ruta privada */}
+          {/* <Route exact path="/dashboard" component={Dashboard}></Route> */}
+          <PrivateRoute
+            exact
+            path="/dashboard"
+            component={Dashboard}
+          ></PrivateRoute>
           <Route path="*" component={Error404}></Route>
         </Switch>
       </Router>
