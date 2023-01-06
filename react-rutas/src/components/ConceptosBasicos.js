@@ -1,8 +1,10 @@
 // Importación de BrowserRouter, Rutas para la web
 import {
   BrowserRouter as Router,
+  HashRouter,
   Redirect,
   Route,
+  Link,
   Switch,
 } from "react-router-dom";
 import Acerca from "../pages/Acerca";
@@ -20,7 +22,27 @@ import PrivateRoute from "./PrivateRoute";
 const ConceptosBasicos = () => {
   return (
     <div>
-      <h2>ConceptosBasicos</h2>
+      <h2>Hash router</h2>
+      {/*  Hash router
+        Utilizar el hash significa que estamos en la misma ruta, en el home, por lo cual no busca un recurso sino que se mantiene en el index
+        http://localhost:3000/usuario/nano
+        http://localhost:3000/#/usuario/nano 
+        Componente especial */}
+      <HashRouter>
+        <nav>
+          <Link to="/">Home</Link>
+          <Link to="/acerca">Acerca</Link>
+          <Link to="/contacto">Contacto</Link>
+        </nav>
+        <Switch>
+          <Route exact path="/" component={Home}></Route>
+          <Route exact path="/acerca" component={Acerca}></Route>
+          <Route exact path="/contacto" component={Contacto}></Route>
+          <Route path="*" component={Error404}></Route>
+        </Switch>
+      </HashRouter>
+      <hr></hr>
+      <h2>Conceptos Basicos</h2>
       <Router>
         <MenuConceptos></MenuConceptos>
         <Switch>
