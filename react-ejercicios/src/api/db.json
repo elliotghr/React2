@@ -1,9 +1,19 @@
 {
   "perros": [
     {
-      "name": "Registro de cliente",
-      "age": "10",
+      "name": "Mosho",
+      "age": "9",
       "id": 1
+    },
+    {
+      "name": "Nano",
+      "age": "10",
+      "id": 2
+    },
+    {
+      "name": "Pelu",
+      "age": "1.9",
+      "id": 3
     }
   ]
 }
