@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 
-const SongForm = ({ handleSearch }) => {
-  const initialForm = {
-    artist: "",
-    song: "",
-  };
+const initialForm = {
+  artist: "",
+  song: "",
+};
+
+const SongForm = ({ handleSearch, handleSaveSong }) => {
   // Formualrios controlados apartir de una variable de estado
   const [form, setForm] = useState(initialForm);
+  const [isDisabled, setIsDisabled] = useState(true);
 
   const handleChange = (e) => {
     setForm({
@@ -18,11 +20,15 @@ const SongForm = ({ handleSearch }) => {
     e.preventDefault();
     // valdiamos
     if (!form.artist || !form.song) {
-      return alert("Datos incompletos");
+      alert("Datos incompletos");
+      setIsDisabled(true);
+      return;
     }
     // enviamos los datos a handleSearch
     handleSearch(form);
     setForm(initialForm);
+    // modificamos la variable
+    setIsDisabled(false);
   };
   return (
     <div>
@@ -42,6 +48,12 @@ const SongForm = ({ handleSearch }) => {
           value={form.song}
         ></input>
         <input type="submit" value="Enviar"></input>
+        <input
+          type="button"
+          onClick={handleSaveSong}
+          value="Agregar canción"
+          disabled={isDisabled && "disabled"}
+        ></input>
       </form>
     </div>
   );
