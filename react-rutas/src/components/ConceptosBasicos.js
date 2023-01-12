@@ -61,7 +61,7 @@ const ConceptosBasicos = () => {
           <Route exact path="/contact">
             <Redirect to="/contacto"></Redirect>
           </Route>
-          {/* Dentro de react tpoics vamos a generar un switch que permita la anidación */}
+          {/* Dentro de react topics vamos a generar un switch que permita la anidación */}
           {/* Al tener un dinamismo no ocuparemos el atributo exact o generará un error */}
           <Route path="/react" component={ReactTopics}></Route>
           {/* Rutas privadas */}

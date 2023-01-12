@@ -30,9 +30,6 @@ const MenuConceptos = () => {
           <NavLink exact to="/contacto" activeClassName="active">
             contacto
           </NavLink>
-          <NavLink exact to="/" activeClassName="active">
-            contacto
-          </NavLink>
           <NavLink exact to="/no-existe" activeClassName="active">
             Error 404
           </NavLink>

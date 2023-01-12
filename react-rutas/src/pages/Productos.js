@@ -1,12 +1,10 @@
 import { useHistory, useLocation } from "react-router-dom";
 
 const Productos = () => {
-  {
-    /* Usamos internamente el hook useLocation para poder obtener los parametros de consulta */
-  }
+  /* Usamos internamente el hook useLocation para poder obtener los parametros de consulta */
   //   Use location trae una llave, pathname, search (donde obetndremos el paso de variables) y el state
-  //   let location = useLocation();
-  //   console.log(location);
+    let location = useLocation();
+    console.log(location);
   //   http://localhost:3000/productos?inicio=1&fin=20
   let { search } = useLocation();
   //   URLSearchParams serealiza los parametros
