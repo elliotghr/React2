@@ -19,7 +19,7 @@ import { Redirect, Route } from "react-router";
 //   );
 // };
 
-//  Siumlar Autenticación
+//  Simular Autenticación
 let auth;
 auth = null;
 auth = true;

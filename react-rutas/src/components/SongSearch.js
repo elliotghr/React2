@@ -6,8 +6,10 @@ import { helpHttp } from "../helpers/helpHttp";
 import { HashRouter, Link, Route, Switch } from "react-router-dom";
 import Error404 from "../pages/Error404";
 import SongTable from "./SongTable";
+import SongPage from "../pages/SongPage";
 
 // Definicion del valor de la variable inicial del localstorage
+// Recupera el valor del localStorage, si no existe mySongs creará un array vacío
 let mySongsInit = JSON.parse(localStorage.getItem("mySongs")) || [];
 
 const SongSearch = () => {
@@ -38,6 +40,7 @@ const SongSearch = () => {
       setLoading(false);
     };
     fetchData();
+    // Cada vez que haya una busqueda asignará el valor
     localStorage.setItem("mySongs", JSON.stringify(mySongs));
   }, [search, mySongs]);
   const handleSearch = (data) => {
@@ -57,11 +60,17 @@ const SongSearch = () => {
     let songs = [...mySongs, currentSong];
     setMySongs(songs);
     setSearch(null);
-    // localStorage.setItem("mySongs", JSON.stringify(songs));
+    localStorage.setItem("mySongs", JSON.stringify(songs));
   };
 
   const handleDeleteSong = (id) => {
-    alert(`Elminando cancion con el id: ${id}`);
+    // alert(`Elminando cancion con el id: ${id}`);
+    let isDelete = window.confirm(`Deseas eliminar el registro con id ${id}`);
+    if (isDelete) {
+      let songs = mySongs.filter((el, index) => index !== id);
+      setMySongs(songs);
+      localStorage.setItem("mySongs", JSON.stringify(songs));
+    }
   };
 
   return (
@@ -94,8 +103,8 @@ const SongSearch = () => {
                 ></SongDetails>
               )}
             </Route>
-            <Route exact path="/canciones/:id">
-              <h2>Página de canción</h2>
+            <Route exact path="/:id">
+              <SongPage mySongs={mySongs}></SongPage>
             </Route>
             <Route path="*" component={Error404}></Route>
           </Switch>

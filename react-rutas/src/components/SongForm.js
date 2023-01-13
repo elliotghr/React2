@@ -8,6 +8,7 @@ const initialForm = {
 const SongForm = ({ handleSearch, handleSaveSong }) => {
   // Formualrios controlados apartir de una variable de estado
   const [form, setForm] = useState(initialForm);
+  // Controlamos el botón de agregar solo si hay datos completos
   const [isDisabled, setIsDisabled] = useState(true);
 
   const handleChange = (e) => {
@@ -52,6 +53,7 @@ const SongForm = ({ handleSearch, handleSaveSong }) => {
           type="button"
           onClick={handleSaveSong}
           value="Agregar canción"
+          // conditional render
           disabled={isDisabled && "disabled"}
         ></input>
       </form>

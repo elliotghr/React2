@@ -68,6 +68,7 @@ const ConceptosBasicos = () => {
           <Route exact path="/login" component={Login}></Route>
           {/* Referencia para ruta privada */}
           {/* <Route exact path="/dashboard" component={Dashboard}></Route> */}
+          {/* pasamos el componente a renderizar en caso de que la auth sea verdadera*/}
           <PrivateRoute
             exact
             path="/dashboard"
