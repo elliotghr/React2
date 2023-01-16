@@ -1,0 +1,7 @@
+# Memorizacion en react
+
+[Link](https://es.reactjs.org/docs/react-api.html#reactmemo)
+
+1. El objetivo es optimizar el rendimiento de nuestra aplicación
+2. Consiste en cachear componentes y funciones para que cuando se esté renderizando un componente por el cambio de su estado y sus componentes internos no se usen, entonces, no generen un renderizado innecesario
+3. La librería usa un proceso de comparación que puede ser más costoso que el renderizado del componente que tratamos de evitar que renderice, hay que utilizarlo con mucha cautela
