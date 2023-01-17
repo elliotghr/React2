@@ -4,24 +4,13 @@ import SongSearch from "./components/SongSearch";
 import SelectsAnidados from "./components/SelectsAnidados";
 import ContactForm from "./components/ContactForm";
 import Modals from "./components/Modals";
-// Ex
-import ExCrud from "./exercises/ExCrud";
-import ArtistApi from "./exercises/ArtistApi";
-import SelectsAn from "./exercises/SelectsAn";
-import ModalsEx from "./exercises/ModalsEx";
+import Ex2Container from "./excercises2/Ex2Container";
+
 function App() {
   return (
     <>
       <h1>Ejercicios con react</h1>
       <Modals></Modals>
-      <hr></hr>
-      <ModalsEx></ModalsEx>
-      <hr></hr>
-      <SelectsAn></SelectsAn>
-      <hr></hr>
-      <ArtistApi></ArtistApi>
-      <hr></hr>
-      <ExCrud></ExCrud>
       <hr></hr>
       <ContactForm></ContactForm>
       <hr></hr>
@@ -33,6 +22,7 @@ function App() {
       <hr></hr>
       <CrudApp> </CrudApp>
       <hr></hr>
+      <Ex2Container></Ex2Container>
     </>
   );
 }

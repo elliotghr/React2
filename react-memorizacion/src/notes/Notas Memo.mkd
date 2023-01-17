@@ -1,7 +1,17 @@
-# Memorizacion en react
+# Notas
+
+## Memorizacion en react
 
 [Link](https://es.reactjs.org/docs/react-api.html#reactmemo)
 
 1. El objetivo es optimizar el rendimiento de nuestra aplicación
 2. Consiste en cachear componentes y funciones para que cuando se esté renderizando un componente por el cambio de su estado y sus componentes internos no se usen, entonces, no generen un renderizado innecesario
 3. La librería usa un proceso de comparación que puede ser más costoso que el renderizado del componente que tratamos de evitar que renderice, hay que utilizarlo con mucha cautela
+
+## Curso React: 73. Memorización ( useCallback ) - jonmircha
+
+useCallback para memorizar funciones puras
+Si el padre pasa funciones al hijo... el componente se vuelve a renderizar aunque se afecte otro componente en el padre
+Cuando recibe funciones como props hay que memorizarlas, esto en el padre
+Cuando se tenga un componente que se quiera renderizar se usa React Memo
+Pero si ese componente que se ha memorizado va a recibir props como funciones, entonces, esas funciones se deben memorizar con useCallback para evitar re renderizados
