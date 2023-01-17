@@ -15,3 +15,7 @@ Si el padre pasa funciones al hijo... el componente se vuelve a renderizar aunqu
 Cuando recibe funciones como props hay que memorizarlas, esto en el padre
 Cuando se tenga un componente que se quiera renderizar se usa React Memo
 Pero si ese componente que se ha memorizado va a recibir props como funciones, entonces, esas funciones se deben memorizar con useCallback para evitar re renderizados
+
+## Curso React: 74. Memorización ( useMemo ) - jonmircha
+
+Use memo nos sirve para memorizar valores que tengamos que calcular en tiempo de ejecución nuestra aplicación, es decir, valores que se calculen y luego se impriman en pantalla

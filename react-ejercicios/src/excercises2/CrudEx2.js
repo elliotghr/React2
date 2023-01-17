@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import Loader from "../components/Loader";
 import { helpHttp } from "../helpers/helpHttp";
 import Ex2Form from "./Ex2Form";
 import Ex2Table from "./Ex2Table";
@@ -13,14 +14,20 @@ const initialValue = {
 const CrudEx2 = () => {
   const [db, setDb] = useState(initialValue);
   const [dataToEdit, setDataToEdit] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   let api = helpHttp();
   let url = "http://localhost:5000/perros";
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
       api.get(url).then((res) => {
-        setDb(res);
+        if (!res.err) {
+          setDb(res);
+        } else {
+        }
+        setLoading(false);
       });
     };
     fetchData();
@@ -76,11 +83,14 @@ const CrudEx2 = () => {
         updateData={updateData}
         setDataToEdit={setDataToEdit}
       ></Ex2Form>
-      <Ex2Table
-        db={db}
-        setDataToEdit={setDataToEdit}
-        deleteData={deleteData}
-      ></Ex2Table>
+      {loading && <Loader></Loader>}
+      {db && (
+        <Ex2Table
+          db={db}
+          setDataToEdit={setDataToEdit}
+          deleteData={deleteData}
+        ></Ex2Table>
+      )}
     </div>
   );
 };

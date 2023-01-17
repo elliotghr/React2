@@ -1,3 +1,4 @@
+import ArtistVs from "./ArtistVs";
 import CrudEx2 from "./CrudEx2";
 
 const Ex2Container = () => {
@@ -5,6 +6,7 @@ const Ex2Container = () => {
     <>
       <h2>Exercise Container</h2>
       <CrudEx2></CrudEx2>
+      <ArtistVs></ArtistVs>
     </>
   );
 };

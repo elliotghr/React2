@@ -1,7 +1,26 @@
-import { memo } from "react";
+import { memo, useMemo } from "react";
 // Importamos memo
 
 const ContadorHijo = ({ contador, sumar, restar }) => {
+  // Valor calculado
+  // Vamos a memorizarlo
+  // let superNumero = 0;
+
+  // for (let i = 0; i < 1000000000; i++) {
+  //   superNumero++;
+  // }
+  // Use memo va a memorizar el resultado de una función, es decir, un valor calculado
+  // Use memo puede mandar un error si no devolvemos el valor que pretendemos memorizar
+  const superNumero = useMemo(() => {
+    let numero = 0;
+
+    for (let i = 0; i < 1000000000; i++) {
+      numero++;
+    }
+    // Retornamos el valor a memorizar
+    return numero;
+  }, []);
+
   console.log("Hijo contador se renderiza");
   return (
     <div
@@ -13,6 +32,7 @@ const ContadorHijo = ({ contador, sumar, restar }) => {
         <button onClick={sumar}>+</button>
         <button onClick={restar}>-</button>
       </nav>
+      <h3>{superNumero}</h3>
     </div>
   );
 };
