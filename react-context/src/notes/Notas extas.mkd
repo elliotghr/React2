@@ -1,0 +1,10 @@
+## Curso React: 82. CRUD API con Context ( 1 / 2 ) - jonmircha
+
+El Proveider no puede ir en el archivo donde vayamos a usar el useConsumer
+En un mismo archivo no puedes compartir las variables del Contexto y tener el wraper (Provider)
+Entomces y en este caso, el Provider será en el archivo App.js y envolverá al componente <CrudApi>
+
+## Curso React: 83. CRUD API con Context ( 2 / 2 ) - jonmircha
+
+Se puede agregar un alias a las props con usando :, ej
+  const { db: data } = useContext(CrudContext);

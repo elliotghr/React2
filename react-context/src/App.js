@@ -1,4 +1,6 @@
+import CrudApi from "./components/CrudApi";
 import MyPage from "./components/MyPage";
+import { CrudProvider } from "./context/CrudContext";
 
 function App() {
   return (
@@ -11,6 +13,10 @@ function App() {
       >
         Documentación
       </a>
+      {/* Hacemos uso del theme provider aqui */}
+      <CrudProvider>
+        <CrudApi></CrudApi>
+      </CrudProvider>
       <hr />
       <MyPage></MyPage>
     </div>

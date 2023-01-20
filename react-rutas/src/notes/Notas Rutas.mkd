@@ -1,0 +1,17 @@
+## Curso React: 57. React Router: Paso de Parámetros (hook useParams) - jonmircha
+
+El Hook useParams devuelve un objeto de pares clave/valor de los parámetros dinámicos de la URL actual que coincidieron con el <Route path>. Las rutas secundarias heredan todos los parámetros de sus rutas principales.
+
+## Curso React: 58. React Router: Parámetros de consulta (hooks useLocation y useHistory) - jonmircha
+
+useLocation
+Este Hook devuelve la Location actual. Esto puede ser útil si se desea realizar algún efecto secundario siempre que cambie la ubicación actual.
+Se usa useLocation para obtener los parametros de consutla (Query params)
+Podemos obetener estos parametros en su propiedad search y despues serializarlos con new URLSearchParams() para su manipulación y posteriormente podemos traerlos con el método get
+
+useHistory
+Nos trae location para modificar los searchParams y sobre todo el método push, que nos permite manipular la URL
+
+useRouteMatch
+Este Hook nos devuelve los métodos url y path.
+El path nos va a permitir consturir rutas relativas <Route>, mientras que url nos permite construir enlaces relativos <Link> o <NavLink>
