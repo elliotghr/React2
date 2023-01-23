@@ -24,3 +24,21 @@ La mejora de nuestro contador será pot la estructura de las carpetas esto se ha
 3.- Se sugiere que las funciones dentro del archivo de la carpeta reducer no conserven su nombre generico (reducer, init o initialValue), se les debe cambiar el nombre por si se llegan a tener varias funciones reductoras, todas las funciones se exportan por defecto
 4.- En el archivo de la carpeta actions se trae el objeto con las acciones, este se exporta por defecto
 5.- Al final, nuestro componente solo debe tener el código JSX y los dispatch que hacen referencia a cada uno de los eventos que tenemos
+
+## Curso React: 87. Carrito de Compras con Reducers ( 1 / 5 ) - jonmircha
+
+1.- Definimos nuestra estructura HTML
+2.- Creamos nuestro archivo Actions y Reducer
+3.- Primero creamos el objeto de las acciones a realizar de nuestra app en nuestro Action
+4.- Preparamos el estado inicial (En este caso simulamos los productos de una API) y la estructura de la lógica de nuestra función reductora, asignando los cases con nuestras acciones
+
+## Curso React: 88. Carrito de Compras con Reducers ( 2 / 5 ) - jonmircha
+
+1.- Hacemos uso del hook useReducer y asignamos la función reductora y el valor inicial
+2.- Destructuamos los productos y el cart
+3.- Se crea el componente ProductItem que contiene todos los productos dados por nuestro valor inicial del estado y se le pasan al componente para renderizarlos
+
+## Curso React: 89. Carrito de Compras con Reducers ( 3 / 5 ) - jonmircha
+
+1.- Creamos el componente CartItem y lo agregamos a ShoppingCart para poder renderizar los productos que estén en él
+2.- Programamos la función de agregar al carrito
