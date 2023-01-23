@@ -23,20 +23,23 @@ export function shoppingReducer(state, action) {
       let newItem = state.products.find(
         (product) => product.id === action.payload
       );
+      //   console.log(newItem);
 
-      let itemInCart = state.cart.find((item) => item.id === newItem.id);
-      console.log(itemInCart);
-      //   retornamos un operador ternario
-      return itemInCart
-        ? {
-            ...state,
-            cart: state.cart.map((item) =>
-              item.id === newItem.id
-                ? { ...item, quantity: item.quantity + 1 }
-                : item
-            ),
-          }
-        : { ...state, cart: [...state.cart, { ...newItem, quantity: 1 }] };
+      let test = state.cart.find((el) => el.id === action.payload);
+      if (!test) {
+        newItem.quantity = 1;
+        return {
+          ...state,
+          cart: [...state.cart, newItem],
+        };
+      } else {
+        test.quantity = test.quantity + 0.5;
+        let stateCart = state.cart.map((el) => (el.id === test.id ? test : el));
+        return {
+          ...state,
+          cart: [...stateCart],
+        };
+      }
     }
     case TYPES.REMOVE_ALL_FROM_CART: {
     }
