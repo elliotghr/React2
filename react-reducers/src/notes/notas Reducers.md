@@ -42,3 +42,8 @@ La mejora de nuestro contador será pot la estructura de las carpetas esto se ha
 
 1.- Creamos el componente CartItem y lo agregamos a ShoppingCart para poder renderizar los productos que estén en él
 2.- Programamos la función de agregar al carrito
+
+## Curso React: 91. Carrito de Compras con Reducers ( 5 / 5 ) - jonmircha
+
+1.- Limpiamos el carrito, usando la acción CLEAR_CART
+2.- indicamos la acción a realizar en la función delFromCart, para saber si eliminamos uno o todos

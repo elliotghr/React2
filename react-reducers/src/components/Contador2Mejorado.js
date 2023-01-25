@@ -1,5 +1,5 @@
 import { useReducer } from "react";
-import { TYPES } from "../actions/contadorActions.";
+import { TYPES } from "../actions/contadorActions";
 import {
   contadorinit,
   contadorInitialState,
