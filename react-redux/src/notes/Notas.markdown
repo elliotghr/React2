@@ -15,7 +15,7 @@ Instalamos redux, react redux y redux devtools
 
   1.- Creamos la carpeta reducers y de forma separada creamos actions y types, aqui en redux sí van separados estos dos archivos
   2.- Aunque las funciones reductoras se creen en archivos independientes habrá un arhchivo que los combine todos en su totalidad (/reducers/index.js), esto se hace con const reducer = combineReducers({}); el cual combina todos los reducers de nuestra app en un objeto
-  3.- Posteriormente,creamos una carpeta store con su respectivo index.js que nos permite crear el "contenedor de la verdad absoluta", mandamos a importar nuestro reducer único y creamos nuestro store con él const store = createStore(reducer); Finalmente nos suscribimos para detectar cualquier cambio en este store store.subscribe(() => console.log(store)); y exportamos por defecto
+  3.- Posteriormente,creamos una carpeta store con su respectivo index.js que nos permite crear el "contenedor de la verdad absoluta", importamos nuestro reducer único y creamos nuestro store con: const store = createStore(reducerÚnico); Finalmente nos suscribimos para detectar cualquier cambio en este store store.subscribe(() => console.log(store)); y exportamos por defecto
   4.- En nuestra App.js compartiremos el store de la app, este Provider es de la librería de react-redux y con esto cualquier componente dentro de la estructura de nuestra app ya va a estar leyendo el estado global de la app através de redux
 
   El núcleo de Redux es una biblioteca muy pequeña y deliberadamente sin opiniones. Proporciona algunas pequeñas primitivas de API:
@@ -27,9 +27,9 @@ Instalamos redux, react redux y redux devtools
 
 ## Curso React: 96. REDUX Flujo de Trabajo - jonmircha
 
-1.- Creamos el componente del contador
-2.- Primero definimos los tipos de acciones en types, aqui a diferencia de useReducer se exportan las acciones en una constante, no en un objeto
-3.- Creamos el archivo de las acciones del contador, este archivo sí es único. Aqui exportamos las funciones que hacen referencia a cada action type que definimos en el punto 2
+1.- Creamos el componente del contador y definimos nuestros elementos JSX
+2.- Primero ** definimos ** los tipos de acciones en types, aqui a diferencia de useReducer se exportan las acciones en una constante, no en un objeto
+3.- Creamos el archivo de las acciones del contador, este archivo sí es único. Aqui exportamos las funciones que hacen referencia a cada action type que definimos en el punto 2, este trae el type y el payload
 4.- Creamos la función reductora con nuestro switch y cases, también creamos nuestro initialState
-5.- Combinamos el reducer que creamos en el index de nuestro reducer
-6.- Vinculamos la lógica en nuestro componente de UI, primero traemos el state de redux useSelector, accedemos a la prop contador que está en este estado único y hacemos uso de los dispatch para llamar las acciones que programamos
+5.- Combinamos el reducer que creamos (contador) en el index en nuestro combineReducer
+6.- Vinculamos la lógica en nuestro componente de UI, primero traemos el state de redux -> useSelector, accedemos a la prop contador (state.contador) que está en este state único y hacemos uso de los dispatch para llamar las acciones que programamos usando ->const dispatch = useDispatch();, por ultimo definmos los eventos a nuestras acciones creadas
