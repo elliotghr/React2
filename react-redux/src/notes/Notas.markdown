@@ -33,3 +33,19 @@ Instalamos redux, react redux y redux devtools
 4.- Creamos la función reductora con nuestro switch y cases, también creamos nuestro initialState
 5.- Combinamos el reducer que creamos (contador) en el index en nuestro combineReducer
 6.- Vinculamos la lógica en nuestro componente de UI, primero traemos el state de redux -> useSelector, accedemos a la prop contador (state.contador) que está en este state único y hacemos uso de los dispatch para llamar las acciones que programamos usando ->const dispatch = useDispatch();, por ultimo definmos los eventos a nuestras acciones creadas
+
+## Curso React: 97. REDUX Carrito de Compras ( 1 / 2 ) - jonmircha
+
+Implementación de lógica del shopping cart
+Creación de los types, actions, reducer y el combineReducer
+
+## Curso React: 99. REDUX CRUD API ( 1 / 2 ) - jonmircha
+
+Creación de los types, actions, reducer y el combineReducer
+En este caso sí necesitaremos seguir usando useState y el useEffect por la complejidad de este componente, eso significa que aqui se van a quedar los métodos y el useEffect en nuestro componente de UI porque contiene peticiones asincronas y no deben ir en la función reductora
+
+## Curso React: 100. REDUX CRUD API ( 2 / 2 ) - jonmircha
+
+Como aqui no se está ejecutando el evento de un componente JSX o en la prop de un componente entonces ya no lo ejecutamos dentro de una arrow function
+En la función reductora en nuestro state siempre se le debe asignar por defecto el valor inicial, ej:
+export function crudReducer(state ** = initialState **, action) {
