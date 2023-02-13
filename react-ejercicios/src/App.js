@@ -4,7 +4,6 @@ import SongSearch from "./components/SongSearch";
 import SelectsAnidados from "./components/SelectsAnidados";
 import ContactForm from "./components/ContactForm";
 import Modals from "./components/Modals";
-import Ex2Container from "./excercises2/Ex2Container";
 
 function App() {
   return (
@@ -21,8 +20,6 @@ function App() {
       <CrudApi></CrudApi>
       <hr></hr>
       <CrudApp> </CrudApp>
-      <hr></hr>
-      <Ex2Container></Ex2Container>
     </>
   );
 }

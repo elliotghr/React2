@@ -7,9 +7,9 @@ function App() {
     <div>
       <h1>React Router</h1>
       <h2>Ejercios rutas</h2>
-      <SongSearch></SongSearch>
+      {/* <SongSearch></SongSearch> */}
       <hr></hr>
-      {/* <CrudApi></CrudApi> */}
+      <CrudApi></CrudApi>
       <hr></hr>
       {/* <SongSearch></SongSearch> */}
       <hr></hr>
