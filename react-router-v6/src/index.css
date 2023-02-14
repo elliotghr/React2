@@ -36,3 +36,8 @@ main {
   margin: 0 auto;
   text-align: center;
 }
+.is-active {
+  color: red;
+  font-weight: 800;
+  pointer-events: none;
+}
